@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app             # map current dir to the app dir
+      - /app/node_modules  # but keep the node_modules intact
